@@ -56,4 +56,17 @@ def call_gemini():
 
 
 
-print(call_gemini())
+gpt_messages = ["Hi there"]
+claude_messages = ["Hi"]
+
+print(f"GPT:\n{gpt_messages[0]}\n")
+print(f"Claude:\n{claude_messages[0]}\n")
+
+for i in range(5):
+    gpt_next = call_gpt()
+    print(f"GPT:\n{gpt_next}\n")
+    gpt_messages.append(gpt_next)
+    
+    claude_next = call_gemini()
+    print(f"Claude:\n{claude_next}\n")
+    claude_messages.append(claude_next)
