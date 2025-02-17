@@ -39,4 +39,21 @@ def call_gpt():
     return completion.choices[0].message.content
 
 
-print(call_gpt())
+def call_gemini():
+    # Create the Gemini model with system instruction
+    gemini = google.generativeai.GenerativeModel(
+        model_name=gemini_model,
+        system_instruction=gemini_system
+    )
+
+    # Use the last message as the user input
+    user_prompt = gpt_messages[-1]  
+
+    # Generate a response from Gemini
+    response = gemini.generate_content(user_prompt)
+
+    return response.text  # Return the generated response
+
+
+
+print(call_gemini())
