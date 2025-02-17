@@ -23,3 +23,6 @@ gemini = google.generativeai.GenerativeModel(
 )
 response = gemini.generate_content(user_prompt)
 print(response.text)
+
+
+

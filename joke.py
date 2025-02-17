@@ -29,7 +29,7 @@ completion = openai.chat.completions.create(
 stream = openai.chat.completions.create(
             model='gpt-4o',
             messages=prompts,
-            temperature=0.4,
+            temperature=0.7,
             stream=True
         )
 
